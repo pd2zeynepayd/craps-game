@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main(void) {
+
+srand(time(NULL));
+int e=2;
+char ch;
+
+int point;
+
+point = 1+rand()%12;
+
+
+printf("A game of chance: CRAPS\n");
+
+if((point==7||point==11)){
+  printf("Player wins!");
+}
+else if((point==2||point==3||point==12)){
+  printf("Player loses.");
+}
+else{
+printf("Player didnt get 7 or 11.\nPlayer's point %d.\nPlease keep pressing enter to continue the game.\n",point);
+  while(e==2){
+  ch=fgetc(stdin);
+
+int roll;
+
+roll =1+rand()%12;
+
+    if(roll==point){
+      printf("Player wins!");
+      e--;
+    }
+    else if(roll==7){
+      printf("Player losed.");
+      e--;
+    }
+    else if(e==2){
+      printf("Player rolled %d \nThe game continues...\n",roll);
+    }
+  }
+}
+  
+  return 0;
+}
